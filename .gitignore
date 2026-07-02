@@ -1,0 +1,35 @@
+# 가상환경
+.venv/
+venv/
+
+# 파이썬 캐시/빌드 산출물
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# 테스트 산출물
+test-results/
+reports/
+
+# Allure 산출물
+allure-results/
+allure-report/
+
+# 시크릿/세션 — 절대 커밋 금지
+.env
+.env.*
+!.env.example
+.auth/
+
+# 로컬 전용 설정 (개인 머신 설정이 레포에 섞이지 않도록)
+.claude/settings.local.json
+
+# 로그
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db

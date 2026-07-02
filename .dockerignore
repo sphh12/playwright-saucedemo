@@ -1,0 +1,29 @@
+# Docker 빌드 컨텍스트에서 제외 — .gitignore 와 별개로 반드시 필요.
+# (COPY . . 가 시크릿/세션/호스트 가상환경을 이미지에 넣는 것을 방지)
+
+# 가상환경 / 파이썬 캐시 — 컨테이너 안에서 새로 설치한다 (호스트 것 덮어쓰기 금지)
+.venv
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.ruff_cache
+.mypy_cache
+*.egg-info
+
+# 시크릿 / 세션 — 이미지 레이어에 박제되면 유출된다
+.env
+.env.*
+!.env.example
+.auth
+
+# 테스트 산출물
+test-results
+reports
+allure-results
+allure-report
+
+# git / 로컬 설정 / 문서
+.git
+.gitignore
+.claude

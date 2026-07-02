@@ -1,0 +1,58 @@
+[project]
+name = "playwright-swaglabs"
+version = "1.0.0"
+description = "SwagLabs(saucedemo) E2E 테스트 자동화 (Playwright + pytest, POM + fixtures + CI/Docker/report)"
+requires-python = ">=3.9"
+dependencies = [
+    # playwright 버전은 Dockerfile 의 이미지 태그와 반드시 일치시킬 것 (docs/docker-guide.md)
+    "playwright==1.61.0",
+    "pytest>=8",
+    "pytest-playwright>=0.8",
+    "pytest-base-url>=2",       # pytest-playwright 의존성 — base_url fixture 를 직접 쓰므로 명시
+    "pytest-html>=4",           # HTML 리포트 (--html)
+    "pytest-xdist>=3",          # 병렬 실행 (-n auto)
+    "pytest-rerunfailures>=14", # 실패 재시도 (--reruns, CI 에서 사용)
+    "pytest-repeat>=0.9",       # 반복 실행 (--count, 플레이키 탐지)
+    "pytest-timeout>=2",        # 테스트별 타임아웃
+    "allure-pytest>=2.13",      # Allure 리포트 (옵션 — ALLURE=true)
+    "python-dotenv>=1",         # .env 로드
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.6"]
+
+[tool.pytest.ini_options]
+# 테스트 대상 — SwagLabs 시나리오 테스트 디렉터리
+testpaths = ["tests"]
+# import 루트: 프로젝트 루트를 sys.path 에 추가해 config/src 를 절대 import 로 쓴다
+pythonpath = ["."]
+# 실패 시에만 산출물 보존 (통과한 테스트는 산출물 없음 → 용량 절약)
+#   --tracing : 실패 시 trace 저장 → `playwright show-trace` 로 열람 (가장 강력한 디버깅 수단)
+#   --video / --screenshot : test-results/ 아래 저장
+#   --html : 자체 포함 HTML 리포트 (report.html)
+addopts = "-ra --tracing=retain-on-failure --screenshot=only-on-failure --video=retain-on-failure --output=test-results --html=reports/report.html --self-contained-html"
+# 테스트 1개당 최대 60초 (JS timeout: 60_000 대응 — pytest-timeout)
+timeout = 60
+markers = [
+    "smoke: 빠른 스모크 테스트",
+    "e2e: 핵심 흐름 엔드투엔드 테스트",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint]
+# E/W(pycodestyle) + F(pyflakes) + I(isort) + UP(pyupgrade) + B(bugbear)
+select = ["E", "W", "F", "I", "UP", "B"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# 테스트 전용 프로젝트 — 배포 패키지가 아니므로 자동 패키지 탐색 비활성화
+py-modules = []
