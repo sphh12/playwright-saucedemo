@@ -21,6 +21,7 @@
 - **CI 워크플로우 YAML 문법 오류 수정**: `playwright.yml` 31행 step 이름의 `(CI: 실패 시 2회 재시도)` 안에 있는 콜론+공백을 YAML 파서가 "키: 값" 구분자로 오인해, 2026-07-02 최초 푸시부터 모든 CI 런이 job 생성 없이 0초 startup failure 였다. 이름 전체를 따옴표로 감싸 해결(`Invalid workflow file ...#L31` 어노테이션 근거). 재발 방지로 `GIT_RULES.md` §10 커밋 전 검증에 워크플로우 YAML 파싱 명령 추가, 이를 위해 `pyyaml` 을 dev 의존성에 추가.
 
 ### Added
+- **CI 야간 회귀(schedule) 트리거 추가**: 매일 `cron: '40 21 * * *'`(UTC 21:40 = KST 06:40) 자동 실행. 코드 변경이 없어도 돌기 때문에 대상 사이트(saucedemo) UI·셀렉터 변화와 플레이키 테스트를 감지한다. 정시 대신 40분으로 둔 이유는 GitHub 정시 부하로 인한 지연 회피. `docs/ci-guide.md` 에 트리거 4종(push/PR/수동/스케줄) 표와 `gh workflow run`·`gh run rerun` 사용법, 스케줄 제약(UTC 기준·기본 브랜치 한정·60일 무활동 시 자동 비활성화) 정리.
 - **README 서두에 테스트 대상 사이트 소개 추가**: SwagLabs(saucedemo.com)가 무엇인지(Sauce Labs 공개 데모 쇼핑몰, 핵심 플로우, 동작이 다른 데모 계정들) 프로젝트 소개 앞에 명시.
 
 ### Changed
