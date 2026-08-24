@@ -28,7 +28,8 @@ jobs:
       - name: Playwright 브라우저 설치
         run: python -m playwright install --with-deps chromium
 
-      - name: 테스트 실행 (CI: 실패 시 2회 재시도)
+      # 값에 콜론(:)이 있으면 YAML 이 "키: 값" 구분자로 오인하므로 반드시 따옴표로 감싼다
+      - name: "테스트 실행 (CI: 실패 시 2회 재시도)"
         run: python -m pytest --reruns 2
 
       - name: 리포트 업로드 (실패 시에도 항상)

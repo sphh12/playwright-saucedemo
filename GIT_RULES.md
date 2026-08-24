@@ -179,6 +179,9 @@ Windows(PowerShell):
 ruff check .
 # 설정 파일 유효성 (pyproject.toml 파싱)
 python -c "import tomllib; tomllib.load(open('pyproject.toml','rb'))"
+# CI 워크플로우 YAML 유효성 — 깨진 워크플로우는 푸시 후 0초 실패로만 드러난다
+#   PyYAML 이 필요하다 (dev 의존성에 포함 — `pip install -e ".[dev]"` 로 설치)
+python -c "import yaml, io; yaml.safe_load(io.open('.github/workflows/playwright.yml', encoding='utf-8'))"
 # 변경 규모 확인 (파일이 통째로 줄었는지)
 git diff --cached --stat
 ```

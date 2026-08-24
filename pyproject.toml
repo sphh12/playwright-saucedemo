@@ -19,7 +19,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["ruff>=0.6"]
+dev = [
+    "ruff>=0.6",
+    "pyyaml>=6",  # 커밋 전 CI 워크플로우 YAML 유효성 검증용 (GIT_RULES.md §10)
+]
 
 [tool.pytest.ini_options]
 # 테스트 대상 — SwagLabs 시나리오 테스트 디렉터리
