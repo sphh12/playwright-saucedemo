@@ -14,6 +14,7 @@
 - [ ] **Allure 리포트 파이프라인**: `ALLURE=true`로 실행 후 `allure serve`/CI 아티팩트 연동 확인.
 - [ ] **추가 시나리오**: problem_user / performance_glitch_user 계정 케이스, 상세 페이지 상품별(6종) 파라미터라이즈, 결제 실패/경계값 확장.
 - [ ] **병렬 실행 튜닝**: `pytest -n auto`(xdist) 동작/세션 storage_state 상호작용 점검.
+- [ ] **CI 액션 버전 업**: `actions/checkout@v4`·`setup-python@v5`·`upload-artifact@v4` 가 Node.js 20 deprecated 경고를 낸다(현재는 Node 24 로 강제 실행되어 동작에는 문제 없음). v5 계열로 올려 경고 제거.
 
 ## 2026-08-24
 
