@@ -17,7 +17,14 @@
 
 ## 2026-08-24
 
+### Fixed
+- **CI 워크플로우 YAML 문법 오류 수정**: `playwright.yml` 31행 step 이름의 `(CI: 실패 시 2회 재시도)` 안에 있는 콜론+공백을 YAML 파서가 "키: 값" 구분자로 오인해, 2026-07-02 최초 푸시부터 모든 CI 런이 job 생성 없이 0초 startup failure 였다. 이름 전체를 따옴표로 감싸 해결(`Invalid workflow file ...#L31` 어노테이션 근거). 재발 방지로 `GIT_RULES.md` §10 커밋 전 검증에 워크플로우 YAML 파싱 명령 추가, 이를 위해 `pyyaml` 을 dev 의존성에 추가.
+
+### Added
+- **README 서두에 테스트 대상 사이트 소개 추가**: SwagLabs(saucedemo.com)가 무엇인지(Sauce Labs 공개 데모 쇼핑몰, 핵심 플로우, 동작이 다른 데모 계정들) 프로젝트 소개 앞에 명시.
+
 ### Changed
+- **환경 세팅 가이드 통합**: README 빠른 시작 + `docs/environment-guide.md` + `.env.example` 사용법에 흩어져 있던 세팅 설명을 `docs/setup-guide.md` 하나로 통합(`git mv`로 이력 보존). 사전 요구사항·설치 5단계·설치 검증·Docker 대체 경로 추가, 기존 환경/시크릿 관리 내용은 §5~§7로 편입. README 빠른 시작은 요약본으로 유지하고 통합 가이드 포인터 추가, 문서 인덱스 갱신.
 - **변경 이력 문서 개편**: `change_notes.md` + `Todo.md` → `CHANGELOG.md`(Keep a Changelog 형식) 단일 파일 통합. 미완료 할 일은 `[Unreleased]`로 큐레이션 — 이미 완료된 "git 초기화 & 원격 푸시" 항목은 제외. 구 `Todo.md` 원본은 하단 부록 A에 무손실 보존.
 
 ## 2026-07-02
