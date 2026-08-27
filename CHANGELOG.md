@@ -19,7 +19,7 @@
 ## 2026-08-27
 
 ### Changed
-- **CI 워크플로 표시 이름 변경**: `Playwright Tests` → `Playwright - SaucedLabs`. GitHub Actions 탭 사이드바와 이후 실행되는 런 제목에 반영된다(과거 런은 실행 시점 이름을 그대로 유지).
+- **CI 워크플로 표시 이름 변경**: `Playwright Tests` → `Playwright - SaucedLabs`. Actions 탭 사이드바와 이후 런에 반영된다. 과거 런은 내부 기록(`run.name`)에 실행 시점 이름을 그대로 유지하지만, 스케줄 런의 목록 제목은 워크플로의 **현재** 이름으로 표시되므로 지난 야간 회귀도 새 이름으로 보인다(실측 확인).
 
 ## 2026-08-24
 
