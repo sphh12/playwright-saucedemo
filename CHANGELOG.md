@@ -16,6 +16,11 @@
 - [ ] **병렬 실행 튜닝**: `pytest -n auto`(xdist) 동작/세션 storage_state 상호작용 점검.
 - [ ] **CI 액션 버전 업**: `actions/checkout@v4`·`setup-python@v5`·`upload-artifact@v4` 가 Node.js 20 deprecated 경고를 낸다(현재는 Node 24 로 강제 실행되어 동작에는 문제 없음). v5 계열로 올려 경고 제거.
 
+## 2026-08-27
+
+### Changed
+- **CI 워크플로 표시 이름 변경**: `Playwright Tests` → `Playwright - SaucedLabs`. GitHub Actions 탭 사이드바와 이후 실행되는 런 제목에 반영된다(과거 런은 실행 시점 이름을 그대로 유지).
+
 ## 2026-08-24
 
 ### Fixed

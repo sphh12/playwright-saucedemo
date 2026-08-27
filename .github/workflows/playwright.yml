@@ -1,5 +1,5 @@
 # Playwright 테스트 CI — push/PR 마다 전체 테스트 실행 후 HTML 리포트를 아티팩트로 업로드
-name: Playwright Tests
+name: "Playwright - SaucedLabs"
 
 on:
   push:
