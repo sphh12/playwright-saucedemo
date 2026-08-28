@@ -1,5 +1,10 @@
 # Playwright 테스트 CI — push/PR 마다 전체 테스트 실행 후 HTML 리포트를 아티팩트로 업로드
 name: "playwright - saucedemo"
+# Actions 탭 목록에 표시될 런 제목.
+#   schedule/수동 실행은 연관 커밋이 없어 기본값이 워크플로 이름이라 서로 구분되지 않는다.
+#   그 두 경우만 덮어쓰고, 나머지는 빈 문자열을 주어 기본 동작(push=커밋 메시지, PR=PR 제목)에 맡긴다.
+#   ("run-name 이 생략되거나 공백뿐이면 이벤트별 기본 정보로 설정된다" — GitHub 워크플로 문법 문서)
+run-name: "${{ github.event_name == 'schedule' && '야간 회귀' || github.event_name == 'workflow_dispatch' && '수동 실행' || '' }}"
 
 on:
   push:
