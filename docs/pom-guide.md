@@ -25,6 +25,7 @@ class LoginPage(BasePage):
 ```
 
 이것만으로 `goto()`(이동+대기), `expect_loaded()`(로드 검증)를 물려받는다.
+
 UI 흐름으로 페이지에 도착했을 때는 `goto()` 대신 `expect_loaded()` 로 도착만 검증한다.
 
 ### 페이지 vs 컴포넌트
@@ -36,6 +37,7 @@ UI 흐름으로 페이지에 도착했을 때는 `goto()` 대신 `expect_loaded(
 ## 싱글턴이 아니라 fixture 주입 (Cypress 경험자용)
 
 Cypress 는 전역 `cy` 하나로 동작하므로 페이지 객체를 싱글턴으로 export 하는 것이 자연스럽다.
+
 Playwright/pytest 는 테스트마다 **독립된 `page` 인스턴스**가 주입되므로(병렬 실행·격리),
 페이지 객체도 `page` 를 받아 매 테스트 새로 만들어야 한다. fixture 가 그 생성을 자동화한다:
 
@@ -70,8 +72,10 @@ def test_login(login_page: LoginPage) -> None: ...
 ## 고정 대기 금지
 
 `page.wait_for_timeout()`(무조건 N초 대기) 은 쓰지 않는다. 로케이터 자동 대기와 `expect(...)` 폴링을 사용한다.
+
 DOM 을 직접 긁어 비교(scrape-then-assert)해야 하면, 재렌더 레이스를 막기 위해
 `page.wait_for_function(...)`(조건이 참이 될 때까지 브라우저 안에서 폴링)을 쓴다.
+
 → `tests/test_inventory.py` 의 가격 정렬 테스트 참고.
 
 ## 새 페이지 추가 절차

@@ -3,13 +3,17 @@
 ## 테스트 대상 사이트 — SwagLabs (saucedemo.com)
 
 [SwagLabs](https://www.saucedemo.com)는 [Sauce Labs](https://saucelabs.com)가 **UI 테스트 자동화 연습용으로 공개 운영하는 데모 쇼핑몰**이다.
+
 로그인 → 상품 목록(정렬·장바구니 담기) → 상품 상세 → 장바구니 → 3단계 체크아웃이라는 전자상거래 핵심 플로우를 갖추고 있으며,
 `standard_user`(정상) 외에 `locked_out_user`(계정 잠김), `problem_user`(의도된 UI 결함), `performance_glitch_user`(의도된 지연) 등
-**서로 다르게 동작하는 공개 데모 계정**을 제공해 정상/예외 시나리오를 모두 검증 연습할 수 있다. 계정 정보는 로그인 페이지에 공개돼 있다.
+**서로 다르게 동작하는 공개 데모 계정**을 제공해 정상/예외 시나리오를 모두 검증 연습할 수 있다.
+
+계정 정보는 로그인 페이지에 공개돼 있다.
 
 ## 프로젝트 소개
 
 SwagLabs 를 대상으로 한 Playwright + pytest E2E 테스트 자동화 프로젝트.
+
 Cypress(JS) 로 작성돼 있던 SwagLabs 시나리오를 Page Object Model 기반 Python 코드로 이식했다.
 
 - 로그인 / 인벤토리(정렬·담기) / 상품 상세 / 장바구니 / 체크아웃 / 메뉴 / 구매 풀플로우 시나리오
@@ -59,6 +63,7 @@ pytest
 | `.env.example` | `.env`             | 선택 (기본값으로도 동작함)      |
 
 ⚠️ 실계정/시크릿은 `.env` 에만 넣는다. `.env`, `.auth/` 는 gitignore 대상이며 **절대 커밋 금지**.
+
 (saucedemo 는 공개 데모 계정이라 코드 기본값을 허용한다.)
 
 ## 실행 명령어

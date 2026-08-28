@@ -34,6 +34,7 @@ FROM mcr.microsoft.com/playwright/python:v1.61.0-noble   # ← playwright==1.61.
 ```
 
 버전이 어긋나면 "browser is not found" 류의 에러가 난다. Playwright 업그레이드 시 함께 수정할 것.
+
 (공식 Python 이미지에는 브라우저가 미리 설치되어 있어 컨테이너 안에서 `playwright install` 이 불필요하다.)
 
 ### 타임존
@@ -43,6 +44,7 @@ FROM mcr.microsoft.com/playwright/python:v1.61.0-noble   # ← playwright==1.61.
 ### Windows 줄바꿈 (CRLF)
 
 컨테이너는 리눅스이므로 셸 스크립트가 CRLF 면 `bad interpreter` 에러가 난다.
+
 `.gitattributes` 가 `*.sh`, `*.py`, `Dockerfile`, `Makefile`, `*.yml` 을 LF 로 강제하고 있으니 유지할 것.
 
 ### 사내 프록시/인증서 환경

@@ -1,6 +1,7 @@
 # Allure 리포트 가이드 (옵션)
 
 기본 리포트는 pytest-html 의 `report.html` + 실패 시 저장되는 Playwright trace 이며 대부분의 경우 그것으로 충분하다.
+
 팀 대시보드 등 Allure 생태계가 필요할 때만 아래처럼 켠다.
 
 ## 사용법
@@ -20,6 +21,7 @@
    ```
 
 `allure-pytest` 는 의존성에 포함되어 있어 파이썬 측 별도 설치는 필요 없다.
+
 단, 리포트 생성용 **Allure CLI** 는 별도 설치가 필요하다 (Java 필요):
 
 ```bash

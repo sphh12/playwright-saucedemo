@@ -65,6 +65,7 @@ playwright show-trace test-results/<테스트 폴더>/trace.zip
 ```
 
 타임라인으로 각 액션 시점의 DOM/네트워크/콘솔을 되돌려 볼 수 있다. **가장 강력한 디버깅 수단.**
+
 (실패 시 브라우저 콘솔 로그는 `capture_console` fixture 가 pytest 출력에도 남긴다.)
 
 ## Windows 관련

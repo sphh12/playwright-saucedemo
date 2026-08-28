@@ -88,4 +88,5 @@ on:
 ## GitLab 등 다른 CI 를 쓰는 경우
 
 핵심 커맨드는 동일하다: `pip install -e .` → `python -m playwright install --with-deps chromium` → `python -m pytest`.
+
 Docker 실행 환경이라면 `mcr.microsoft.com/playwright/python:v<버전>-noble` 이미지를 쓰면 브라우저 설치가 생략된다.
