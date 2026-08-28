@@ -2,7 +2,7 @@
 
 코드를 Git 저장소에 커밋/푸시할 때 준수해야 할 규칙. (cypress_swagLabs / playwright_template 의 규칙과 동일한 정책을 이 프로젝트 맥락으로 옮긴 것)
 
-원격 저장소: `origin = github.com/sphh12/playwright_swagLabs_py`
+원격 저장소: `origin = github.com/sphh12/playwright-saucedemo`
 
 ## 1. 커밋 메시지 컨벤션
 

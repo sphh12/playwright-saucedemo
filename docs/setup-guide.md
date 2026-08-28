@@ -22,8 +22,8 @@
 
 ```bash
 # 0. 클론
-git clone https://github.com/sphh12/playwright_swagLabs_py.git
-cd playwright_swagLabs_py
+git clone https://github.com/sphh12/playwright-saucedemo.git
+cd playwright-saucedemo
 
 # 1. 가상환경 생성 + 활성화
 python -m venv .venv

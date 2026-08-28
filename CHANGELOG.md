@@ -19,6 +19,8 @@
 ## 2026-08-27
 
 ### Changed
+- **저장소 이름 변경**: `playwright_swagLabs_py` → `playwright-saucedemo`. 이에 맞춰 코드 내 참조를 갱신 — `docs/setup-guide.md` 클론 URL·`cd` 경로, `GIT_RULES.md` 원격 주소, `README.md` 구조 트리 루트, `pyproject.toml` 패키지명(`playwright-swaglabs` → `playwright-saucedemo`). 패키지명 변경에 따라 `pip install -e ".[dev]"` 재실행 및 구 `playwright-swaglabs` 등록 제거 필요(로컬 수행 완료). 테스트 대상 앱의 제품명인 **SwagLabs 표기는 그대로 유지** — 저장소 이름과 무관한 고유명사다.
+- **CI 워크플로 표시 이름 변경**: `Playwright - SaucedLabs` → `playwright - saucedemo`.
 - **야간 회귀 실행 시각 변경**: `cron '40 21 * * *'`(KST 06:40) → `'5 18 * * *'`(UTC 18:05 = KST 03:05). 스케줄은 정시 보장이 아니라 "이 시각 이후 여유될 때" 발동하는데, 2026-08-27 GitHub Actions Critical 장애로 **+203분 지연**되어 KST 10:02에 실행됐다(평소 +19분). 새벽으로 옮겨 출근 전까지 약 6시간 버퍼를 확보 — 3시간 지연돼도 06:30 이전 완료. `docs/ci-guide.md` 에 실측 지연 데이터와 UTC/KST 날짜 차이 주의 반영.
 - **CI 워크플로 표시 이름 변경**: `Playwright Tests` → `Playwright - SaucedLabs`. Actions 탭 사이드바와 이후 런에 반영된다. 과거 런은 내부 기록(`run.name`)에 실행 시점 이름을 그대로 유지하지만, 스케줄 런의 목록 제목은 워크플로의 **현재** 이름으로 표시되므로 지난 야간 회귀도 새 이름으로 보인다(실측 확인).
 

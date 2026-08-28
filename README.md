@@ -85,7 +85,7 @@ pytest
 ## 프로젝트 구조
 
 ```
-playwright_swagLabs_py/
+playwright-saucedemo/
 ├── pyproject.toml              # 의존성 + pytest 설정(마커/addopts) + ruff 설정
 ├── Makefile                    # 실행 단축 명령
 ├── conftest.py                 # 루트: base_url/공통 컨텍스트 옵션 + 실패 시 콘솔 로그 첨부 + Allure 토글

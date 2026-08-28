@@ -1,5 +1,5 @@
 [project]
-name = "playwright-swaglabs"
+name = "playwright-saucedemo"
 version = "1.0.0"
 description = "SwagLabs(saucedemo) E2E 테스트 자동화 (Playwright + pytest, POM + fixtures + CI/Docker/report)"
 requires-python = ">=3.9"
