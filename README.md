@@ -1,5 +1,10 @@
 # Playwright SwagLabs (Python)
 
+[![CI](https://github.com/sphh12/playwright-saucedemo/actions/workflows/playwright.yml/badge.svg)](https://github.com/sphh12/playwright-saucedemo/actions/workflows/playwright.yml)
+
+> 배지는 기본 브랜치의 최신 CI 실행 상태다. 매일 KST 03:05 데일리 회귀가 돌기 때문에 대개 그 결과를 가리킨다.
+> 스케줄 실행만 따로 보려면 [Actions — event:schedule](https://github.com/sphh12/playwright-saucedemo/actions/workflows/playwright.yml?query=event%3Aschedule) 참고.
+
 ## 테스트 대상 사이트 — SwagLabs (saucedemo.com)
 
 [SwagLabs](https://www.saucedemo.com)는 [Sauce Labs](https://saucelabs.com)가 **UI 테스트 자동화 연습용으로 공개 운영하는 데모 쇼핑몰**이다.

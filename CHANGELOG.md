@@ -16,6 +16,14 @@
 - [ ] **병렬 실행 튜닝**: `pytest -n auto`(xdist) 동작/세션 storage_state 상호작용 점검.
 - [ ] **CI 액션 버전 업**: `actions/checkout@v4`·`setup-python@v5`·`upload-artifact@v4` 가 Node.js 20 deprecated 경고를 낸다(현재는 Node 24 로 강제 실행되어 동작에는 문제 없음). v5 계열로 올려 경고 제거.
 
+## 2026-08-31
+
+### Added
+- **README 에 CI 상태 배지 추가**: 저장소 Public 전환에 맞춰 기본 브랜치 최신 CI 상태를 첫 화면에 노출. 워크플로 **파일 경로 기반** URL(`.../actions/workflows/playwright.yml/badge.svg`)을 사용 — 이름 기반 레거시 URL은 워크플로 이름을 바꾸면 깨진다(이 프로젝트는 이미 두 번 변경). 스케줄 실행만 보는 링크도 함께 안내.
+
+### Changed
+- **저장소 공개 전환**: Private → **Public**. 전환 전 히스토리 전체(모든 커밋의 blob) 민감정보 스캔 수행 — 키/토큰 0건, 민감 파일명 0건(`.env.example` 만 존재), 회사·내부망 정보 0건, 이메일/개인경로 0건. 코드에 하드코딩된 자격증명은 saucedemo **공개 데모 계정**뿐이며 `GIT_RULES.md` §3 예외 대상이다.
+
 ## 2026-08-28
 
 ### Added
