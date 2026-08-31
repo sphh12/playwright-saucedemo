@@ -14,9 +14,11 @@
 - [ ] **Allure 리포트 파이프라인**: `ALLURE=true`로 실행 후 `allure serve`/CI 아티팩트 연동 확인.
 - [ ] **추가 시나리오**: problem_user / performance_glitch_user 계정 케이스, 상세 페이지 상품별(6종) 파라미터라이즈, 결제 실패/경계값 확장.
 - [ ] **병렬 실행 튜닝**: `pytest -n auto`(xdist) 동작/세션 storage_state 상호작용 점검.
-- [ ] **CI 액션 버전 업**: `actions/checkout@v4`·`setup-python@v5`·`upload-artifact@v4` 가 Node.js 20 deprecated 경고를 낸다(현재는 Node 24 로 강제 실행되어 동작에는 문제 없음). v5 계열로 올려 경고 제거.
 
 ## 2026-08-31
+
+### Changed
+- **CI 액션 버전 업**: `actions/checkout@v4`·`setup-python@v5`·`upload-artifact@v4` → 각 **v7**. Node.js 20 지원 종료로 매 실행마다 deprecated 경고가 출력됐다(GitHub 이 Node 24 로 강제 실행해 동작 자체는 정상이었으나, 이 호환 장치는 영구적이지 않다). 템플릿 저장소에 먼저 적용해 정상 동작(CI success, 경고 0건)을 확인한 뒤 반영. `[Unreleased]` 해당 항목 완료 처리.
 
 ### Added
 - **README 에 CI 상태 배지 추가**: 저장소 Public 전환에 맞춰 기본 브랜치 최신 CI 상태를 첫 화면에 노출. 워크플로 **파일 경로 기반** URL(`.../actions/workflows/playwright.yml/badge.svg`)을 사용 — 이름 기반 레거시 URL은 워크플로 이름을 바꾸면 깨진다(이 프로젝트는 이미 두 번 변경). 스케줄 실행만 보는 링크도 함께 안내.
