@@ -4,7 +4,7 @@ name: "playwright - saucedemo"
 #   schedule/수동 실행은 연관 커밋이 없어 기본값이 워크플로 이름이라 서로 구분되지 않는다.
 #   그 두 경우만 덮어쓰고, 나머지는 빈 문자열을 주어 기본 동작(push=커밋 메시지, PR=PR 제목)에 맡긴다.
 #   ("run-name 이 생략되거나 공백뿐이면 이벤트별 기본 정보로 설정된다" — GitHub 워크플로 문법 문서)
-run-name: "${{ github.event_name == 'schedule' && '야간 회귀' || github.event_name == 'workflow_dispatch' && '수동 실행' || '' }}"
+run-name: "${{ github.event_name == 'schedule' && '[Daily] Regression Test' || github.event_name == 'workflow_dispatch' && '수동 실행' || '' }}"
 
 on:
   push:
@@ -13,7 +13,7 @@ on:
     branches: [main, master]
   # Actions 탭에서 수동 실행 가능
   workflow_dispatch:
-  # 야간 회귀 — 코드 변경이 없어도 매일 1회 실행해 대상 사이트(saucedemo) 변화와
+  # 데일리 레그레션(런 제목: [Daily] Regression Test) — 코드 변경이 없어도 매일 1회 실행해 대상 사이트(saucedemo) 변화와
   # 플레이키 테스트를 감지한다. cron 은 UTC 기준이며 기본 브랜치에서만 동작한다.
   #   '5 18 * * *' = UTC 18:05 = KST 03:05 (UTC 날짜 +1일이 KST 날짜)
   #   정시(:00)는 GitHub 부하가 커 지연되므로 일부러 5분으로 둔다.

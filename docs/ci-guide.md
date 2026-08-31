@@ -10,7 +10,7 @@ HTML 리포트(`report.html`)와 실패 산출물(`test-results/`)을 아티팩�
 | `push`              | 자동 | 필요      | main/master 푸시 시 회귀 검증               |
 | `pull_request`      | 자동 | 필요      | PR 머지 전 게이트                           |
 | `workflow_dispatch` | 수동 | 불필요    | Actions 탭 "Run workflow" — 올라간 코드 재실행 |
-| `schedule`          | 자동 | 불필요    | 야간 회귀 (매일 KST 03:05)                  |
+| `schedule`          | 자동 | 불필요    | `[Daily] Regression Test` (매일 KST 03:05)  |
 
 수동 실행/재실행은 CLI 로도 가능하다:
 
