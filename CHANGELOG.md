@@ -3,12 +3,12 @@
 프로젝트의 주요 변경 이력을 이 파일 하나에서 관리한다.
 
 - 형식: [Keep a Changelog](https://keepachangelog.com/ko/1.1.0/) 기반 — **최신 항목이 위**(역순), 항목 분류는 `### Added` / `### Changed` / `### Fixed`.
-- 할 일은 `## [Unreleased]` 에서 관리한다 (구 `Todo.md` 통합).
+- 할 일은 상단 `## Todo` 에서 관리한다 (구 `Todo.md` 통합). 배포 버전을 찍지 않는 저장소라 Keep a Changelog 의 `[Unreleased]` 대신 용도를 그대로 드러내는 이름을 쓴다.
 - 오래된 이력(3~6개월 경과)은 `archive/CHANGELOG-<범위>.md` 로 분리한다 — 현재 아카이브 없음.
 
-## [Unreleased]
+## Todo
 
-구 `Todo.md` "다음 추천 작업" 중 현재도 유효한 항목 (우선순위순):
+아직 하지 않은 작업 (우선순위순). 완료하면 이 목록에서 빼고 아래 날짜 섹션에 기록한다.
 
 - [ ] **CI 시크릿/브라우저 매트릭스**: GitHub Actions에 chromium 외 firefox/webkit 매트릭스 확장, 필요 시 계정 시크릿 주입.
 - [ ] **Allure 리포트 파이프라인**: `ALLURE=true`로 실행 후 `allure serve`/CI 아티팩트 연동 확인.
@@ -18,6 +18,7 @@
 ## 2026-08-31
 
 ### Changed
+- **할 일 섹션 이름 변경**: `[Unreleased]` → `Todo`. 이 저장소는 배포 버전을 찍지 않아 Keep a Changelog 의 `[Unreleased]`(완료됐으나 미배포) 의미와 실제 용도(미착수 할 일)가 어긋나 있었다. 처음 보는 사람이 바로 이해하도록 용도를 드러내는 이름으로 바꾸고, 상단 안내에 그 이유를 명시. 전역 세션 규칙이 `Todo` 를 인식하므로 "하이/바이" 브리핑은 그대로 동작한다.
 - **CI 액션 버전 업**: `actions/checkout@v4`·`setup-python@v5`·`upload-artifact@v4` → 각 **v7**. Node.js 20 지원 종료로 매 실행마다 deprecated 경고가 출력됐다(GitHub 이 Node 24 로 강제 실행해 동작 자체는 정상이었으나, 이 호환 장치는 영구적이지 않다). 템플릿 저장소에 먼저 적용해 정상 동작(CI success, 경고 0건)을 확인한 뒤 반영. `[Unreleased]` 해당 항목 완료 처리.
 
 ### Added
