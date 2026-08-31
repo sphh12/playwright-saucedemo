@@ -67,6 +67,7 @@ def test_login(login_page: LoginPage) -> None: ...
 
 > saucedemo 는 `data-test` 속성을 쓰므로 `tests/conftest.py` 의 autouse fixture 에서
 > `playwright.selectors.set_test_id_attribute("data-test")` 로 지정해 `get_by_test_id` 를 그대로 쓸 수 있게 했다.
+>
 > (Python 은 이 설정이 **전역**이라, conftest 에서 세션 종료 시 기본값 `data-testid` 로 복원한다.)
 
 ## 고정 대기 금지

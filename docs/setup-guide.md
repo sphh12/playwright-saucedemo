@@ -14,8 +14,12 @@
 | Docker (선택) | 컨테이너 실행 시   | `docker --version`   |
 | Allure CLI (선택) | Allure 리포트 시 | `allure --version` |
 
-> **Windows 에서 make**: 기본 설치되지 않는다. `make` 없이도 README 실행 명령표의 "실제 명령"(`pytest -n auto` 등)을
-> 그대로 쓰면 되므로 설치는 필수가 아니다. 설치하더라도 `make test-debug` 는 `PWDEBUG=1 python -m pytest -s` 처럼
+> **Windows 에서 make**: 기본 설치되지 않는다.
+>
+> `make` 없이도 README 실행 명령표의 "실제 명령"(`pytest -n auto` 등)을
+> 그대로 쓰면 되므로 설치는 필수가 아니다.
+>
+> 설치하더라도 `make test-debug` 는 `PWDEBUG=1 python -m pytest -s` 처럼
 > POSIX 환경변수 접두어 문법을 쓰기 때문에 Windows(cmd 셸) 에서는 동작하지 않는다 —
 > 이때는 `$env:PWDEBUG=1; pytest -s` 로 직접 실행한다.
 
@@ -42,6 +46,7 @@ cp .env.example .env               # Windows: Copy-Item .env.example .env
 ```
 
 > 3단계가 필요한 이유: playwright 패키지는 제어 라이브러리일 뿐이고 실제 브라우저는 별도 다운로드다.
+>
 > (Cypress는 브라우저가 번들이지만 Playwright는 이 단계가 분리되어 있다.)
 
 ## 3. 설치 검증

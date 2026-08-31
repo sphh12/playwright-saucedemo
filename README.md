@@ -2,7 +2,10 @@
 
 [![CI](https://github.com/sphh12/playwright-saucedemo/actions/workflows/playwright.yml/badge.svg)](https://github.com/sphh12/playwright-saucedemo/actions/workflows/playwright.yml)
 
-> 배지는 기본 브랜치의 최신 CI 실행 상태다. 매일 KST 03:05 데일리 회귀가 돌기 때문에 대개 그 결과를 가리킨다.
+> 배지는 기본 브랜치의 최신 CI 실행 상태다.
+>
+> 매일 KST 03:05 데일리 회귀가 돌기 때문에 대개 그 결과를 가리킨다.
+>
 > 스케줄 실행만 따로 보려면 [Actions — event:schedule](https://github.com/sphh12/playwright-saucedemo/actions/workflows/playwright.yml?query=event%3Aschedule) 참고.
 
 ## 테스트 대상 사이트 — SwagLabs (saucedemo.com)
@@ -39,7 +42,9 @@ Cypress(JS) 로 작성돼 있던 SwagLabs 시나리오를 Page Object Model 기�
 
 ## 빠른 시작
 
-> 아래는 최소 절차 요약이다. **사전 요구사항·설치 검증·환경/시크릿 관리·Docker 대체 경로**까지 포함한
+> 아래는 최소 절차 요약이다.
+>
+> **사전 요구사항·설치 검증·환경/시크릿 관리·Docker 대체 경로**까지 포함한
 > 전체 세팅 절차는 통합 가이드 **[`docs/setup-guide.md`](docs/setup-guide.md)** 를 따른다.
 
 ```bash

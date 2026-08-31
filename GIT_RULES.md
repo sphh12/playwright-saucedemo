@@ -44,7 +44,9 @@ git log -1 --format=%B | grep -i claude
 ```
 
 > **예외 — 유지 대상**: 기능 코드의 `claude`(API 모델명, CLI 명령 등)와 프로젝트 문서 `CLAUDE.md`,
-> `.claude/` 설정은 정당한 파일이므로 제거하지 않는다. (위 검색의 false positive)
+> `.claude/` 설정은 정당한 파일이므로 제거하지 않는다.
+>
+> (위 검색의 false positive)
 
 ## 3. 푸시 전 민감정보 스캔 (필수)
 
